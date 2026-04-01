@@ -6,6 +6,6 @@ Menyudan kitab adını seçin.
 
 6–14 yaş arası oğlan uşaqları üçün.
 
-## Dərslərin vaxtı vədəsi
+## Dərslərin vaxtı
 
 Dərslər həftənin bazar günü səhər saat 10:00 da başlayır. 2,5 saat davam edir.
