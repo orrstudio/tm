@@ -10,6 +10,7 @@ write_full_index() {
   local output_file="$1"
   local toc_file="$2"
   local lessons_file="$3"
+  local welcome_file="$4"
 
   cat > "$output_file" <<'HTML'
 <!DOCTYPE html>
@@ -89,26 +90,15 @@ HTML
       </aside>
 
       <main class="lesson-stage">
-        <section class="content-panel home-panel is-visible" id="homePanel" aria-labelledby="homePanelTitle">
-          <div class="home-hero">
-            <p class="eyebrow">Buradan başlayın</p>
-            <h2 id="homePanelTitle">ONLİNE TƏSƏVVÜF İBTİDAİ MƏKTƏB.</h2>
-            <p class="home-hero__lead">Menyudan kitab adını seçin.</p>
-          </div>
+        <section class="content-panel home-panel is-visible" id="homePanel" aria-label="Ana səhifə">
+          <div class="lesson-card">
+            <div class="lesson-content">
+HTML
 
-          <div class="home-grid">
-            <article class="home-card">
-              <h3>6–14 yaş arası oğlan uşaqları üçün.</h3>
-              <p>Dərslər həftənin bazar günü səhər saat 10:00 da başlayır.</p>
-            </article>
-            <article class="home-card">
-              <h3>Qovluq quruluşu</h3>
-              <p>Hər kitab üçün ayrıca qovluq var.</p>
-            </article>
-            <article class="home-card">
-              <h3>Tək səhifədə oxu</h3>
-              <p>Seçilmiş dərs görünür əvvəlki dərs isə gizlənir.</p>
-            </article>
+  cat "$welcome_file" >> "$output_file"
+
+  cat >> "$output_file" <<'HTML'
+            </div>
           </div>
         </section>
 HTML
@@ -414,15 +404,45 @@ main() {
     exit 1
   fi
 
-  local toc_tmp lessons_tmp output_tmp fragment_tmp
+  local toc_tmp lessons_tmp output_tmp fragment_tmp welcome_tmp
   toc_tmp="$(mktemp)"
   lessons_tmp="$(mktemp)"
   output_tmp="$(mktemp)"
   fragment_tmp="$(mktemp)"
-  trap 'rm -f "${toc_tmp:-}" "${lessons_tmp:-}" "${output_tmp:-}" "${fragment_tmp:-}"' EXIT
+  welcome_tmp="$(mktemp)"
+  trap 'rm -f "${toc_tmp:-}" "${lessons_tmp:-}" "${output_tmp:-}" "${fragment_tmp:-}" "${welcome_tmp:-}"' EXIT
 
   : > "$toc_tmp"
   : > "$lessons_tmp"
+  : > "$welcome_tmp"
+
+  local welcome_file welcome_relative_dir
+  welcome_file="$LESSONS_DIR/welcome.md"
+  if [[ -f "$welcome_file" ]]; then
+    welcome_relative_dir="$(dirname "${welcome_file#$PROJECT_ROOT/}")"
+    pandoc --from=gfm --to=html5 "$welcome_file" -o "$fragment_tmp"
+    LESSON_PREFIX="$welcome_relative_dir" rewrite_relative_paths "$fragment_tmp"
+    sed 's/^/              /' "$fragment_tmp" > "$welcome_tmp"
+  else
+    cat > "$welcome_tmp" <<'HTML'
+              <div class="home-hero">
+                <p class="eyebrow">Buradan başlayın</p>
+                <h2 id="homePanelTitle">ONLİNE TƏSƏVVÜF İBTİDAİ MƏKTƏB.</h2>
+                <p class="home-hero__lead">Menyudan kitab adını seçin.</p>
+              </div>
+
+              <div class="home-grid">
+                <article class="home-card">
+                  <h3>Yaş həddi</h3>
+                  <p>6–14 yaş arası oğlan uşaqları üçün.</p>
+                </article>
+                <article class="home-card">
+                  <h3>Dərslərin vaxtı vədəsi</h3>
+                  <p>Dərslər həftənin bazar günü səhər saat 10:00 da başlayır. 2,5 saat davam edir.</p>
+                </article>
+              </div>
+HTML
+  fi
 
   mapfile -t book_dirs < <(find "$LESSONS_DIR" -mindepth 1 -maxdepth 1 -type d | sort)
 
@@ -500,15 +520,20 @@ EOF
 EOF
   done
 
-  write_full_index "$output_tmp" "$toc_tmp" "$lessons_tmp"
+  write_full_index "$output_tmp" "$toc_tmp" "$lessons_tmp" "$welcome_tmp"
 
-  if [[ -f "$INDEX_FILE" ]] && cmp -s "$output_tmp" "$INDEX_FILE"; then
-    echo "No changes detected. index.html is already up to date."
-    exit 0
+  local index_previously_existed="false"
+  if [[ -f "$INDEX_FILE" ]]; then
+    index_previously_existed="true"
   fi
 
   mv "$output_tmp" "$INDEX_FILE"
-  echo "Updated $INDEX_FILE from lessons grouped by book folders."
+
+  if [[ "$index_previously_existed" == "true" ]]; then
+    echo "Rebuilt $INDEX_FILE from lessons grouped by book folders."
+  else
+    echo "Created $INDEX_FILE from lessons grouped by book folders."
+  fi
 }
 
 main "$@"

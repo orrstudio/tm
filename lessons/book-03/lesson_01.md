@@ -32,4 +32,3 @@ Gerçəkləşməsini istədiyiniz arzuları Allaha necə dua edərdiz?
 
 Misal: Allahım mənə ... ver. Və məni buna laiq qıl.  
 
-....
