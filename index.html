@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TƏSƏVVÜF MƏKTƏBİ</title>
+  <meta name="description" content="Markdown fayllarından yaradılan adaptiv dərs saytı.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <section class="auth-screen" id="authScreen" aria-labelledby="authTitle">
+    <div class="auth-card">
+      <img class="auth-logo" src="assets/tm.png" alt="Təsəvvüf Məktəbi loqosu">
+      <h1 id="authTitle" class="auth-title">Təsəvvüf məktəbinin kitabxanasına GİRİŞ</h1>
+      <div class="auth-form" id="authForm">
+        <input class="auth-input" id="passwordInput" name="password" type="password" autocomplete="current-password" placeholder="Şifrəni yaz" required>
+        <button class="auth-submit" id="authSubmit" type="button">Daxil ol</button>
+        <p class="auth-message" id="authMessage" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__copy">
+        <div class="site-brand">
+          <img class="site-brand__logo" src="assets/tm.png" alt="Təsəvvüf Məktəbi loqosu">
+          <h1 class="site-title">TƏSƏVVÜF MƏKTƏBİ</h1>
+        </div>
+        <p class="site-subtitle">DƏRS KİTABXANASI</p>
+      </div>
+      <div class="site-header__actions">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="lessonNavigation" aria-label="Dərs menyusunu aç">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Tünd və açıq tema arasında keçid et">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor"></circle>
+            <path d="M12 1.8v3.1M12 19.1v3.1M4.1 4.1l2.2 2.2M17.7 17.7l2.2 2.2M1.8 12h3.1M19.1 12h3.1M4.1 19.9l2.2-2.2M17.7 6.3l2.2-2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.8 2.6a8.9 8.9 0 1 0 6.6 14.8 9.7 9.7 0 1 1-6.6-14.8Z" fill="currentColor"></path>
+          </svg>
+        </button>
+        <button class="logout-button" id="logoutButton" type="button" aria-label="Çıxış et">
+          <svg class="logout-button__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 3.5h8v17H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+            <path d="M10 12h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M15.5 8.5 19 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="9.2" cy="12" r="0.9" fill="currentColor"></circle>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+
+    <div class="layout">
+      <aside class="toc-panel" id="lessonNavigation" aria-label="Mündəricat">
+        <div class="toc-panel__header">
+
+        </div>
+        <div class="toc" id="lessonToc">
+          <button class="panel-button toc-button is-active" type="button" data-panel-target="homePanel" aria-selected="true">
+            <span class="toc-button__eyebrow">XOŞ GƏLMİSİNİZ</span>
+          </button>
+          <section class="book-group">
+            <button class="panel-button book-toggle" type="button" data-panel-target="book-book-01-panel" data-book-target="book-book-01" aria-expanded="false" aria-selected="false">
+              <span class="book-toggle__title">TANIŞLIQ</span>
+              <span class="book-toggle__icon" aria-hidden="true"></span>
+            </button>
+            <div class="book-lessons" id="book-book-01-lessons">
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-01-lesson_01" data-book-parent="book-book-01" aria-selected="false">
+                <span class="lesson-link__label">İLK DUAMIZ</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-01-lesson_02" data-book-parent="book-book-01" aria-selected="false">
+                <span class="lesson-link__label">ALLAH</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-01-lesson_03" data-book-parent="book-book-01" aria-selected="false">
+                <span class="lesson-link__label">KAİNAT</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-01-lesson_04" data-book-parent="book-book-01" aria-selected="false">
+                <span class="lesson-link__label">İNSAN</span>
+              </button>
+            </div>
+          </section>
+          <section class="book-group">
+            <button class="panel-button book-toggle" type="button" data-panel-target="book-book-02-panel" data-book-target="book-book-02" aria-expanded="false" aria-selected="false">
+              <span class="book-toggle__title">DUA ETMƏYİ ÖRGƏNİRƏM 1</span>
+              <span class="book-toggle__icon" aria-hidden="true"></span>
+            </button>
+            <div class="book-lessons" id="book-book-02-lessons">
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_01" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">DUA</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_02" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">ALLAHA QƏLBDƏN DUA ETMƏK, SƏMİMİYYƏT, İMAN</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_03" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">ƏN VACİB DUA: "quot;ALLAHA QOVUŞMAĞI DİLƏMƏK"quot;</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_04" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">ALLAHIN DOSTLUĞUNA QAÇAQ, XOŞBƏXT OLAQ</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_05" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">HİMMƏT - MÜRŞİDİN BİZİM ÜÇÜN DUASI</span>
+              </button>
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-02-lesson_06" data-book-parent="book-book-02" aria-selected="false">
+                <span class="lesson-link__label">YEMƏK DUASI EDİRƏM (YEMEK DUASI YAPIYORUM)</span>
+              </button>
+            </div>
+          </section>
+          <section class="book-group">
+            <button class="panel-button book-toggle" type="button" data-panel-target="book-book-03-panel" data-book-target="book-book-03" aria-expanded="false" aria-selected="false">
+              <span class="book-toggle__title">DUA ETMƏYİ ÖRGƏNİRƏM 2</span>
+              <span class="book-toggle__icon" aria-hidden="true"></span>
+            </button>
+            <div class="book-lessons" id="book-book-03-lessons">
+              <button class="panel-button lesson-link" type="button" data-panel-target="book-03-lesson_01" data-book-parent="book-book-03" aria-selected="false">
+                <span class="lesson-link__label">DUASI QƏBUL EDİLƏNLƏR VƏ DUASI QƏBUL EDİLMƏYƏNLƏR</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <main class="lesson-stage">
+        <section class="content-panel home-panel is-visible" id="homePanel" aria-labelledby="homePanelTitle">
+          <div class="home-hero">
+            <p class="eyebrow">Buradan başlayın</p>
+            <h2 id="homePanelTitle">Kitablar və dərslər bir yerdə toplanıb.</h2>
+            <p class="home-hero__lead">Menyudan kitab adını seçin.</p>
+          </div>
+
+          <div class="home-grid">
+            <article class="home-card">
+              <h3>Əvvəl kitablar</h3>
+              <p>Menyu dərsləri kitab başlıqları altında toplanır.</p>
+            </article>
+            <article class="home-card">
+              <h3>Qovluq quruluşu</h3>
+              <p>Hər kitab üçün ayrıca qovluq var.</p>
+            </article>
+            <article class="home-card">
+              <h3>Tək səhifədə oxu</h3>
+              <p>Seçilmiş dərs görünür əvvəlki dərs isə gizlənir.</p>
+            </article>
+          </div>
+        </section>
+        <article class="content-panel lesson" id="book-book-01-panel" hidden aria-labelledby="book-book-01-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="tanişliq">TANIŞLIQ</h1>
+              <p><img src="assets/pictures/tanisliq.jpg" alt="tanisliq" /></p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-01-lesson_01" hidden aria-labelledby="book-01-lesson_01-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="i̇lk-duamiz">İLK DUAMIZ</h1>
+              <p><img src="assets/pictures/duael.webp" alt="duael" /></p>
+              <ul>
+              <li>Allahım, mənidə başqalarına dost olan qullarından elə!</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-01-lesson_02" hidden aria-labelledby="book-01-lesson_02-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="allah">ALLAH</h1>
+              <p><img src="assets/pictures/Allah.svg" alt="Allah" /></p>
+              <h2 id="--allah-heart-sevəndi̇r-heart">- Allah ❤️ SEVƏNDİR ❤️</h2>
+              <h2 id="--allah-hər-şeyə-qadir-olandır">- Allah hər şeyə qadir
+              olandır!</h2>
+              <h2
+              id="--allah-duaları-pray-qəbul-edəndir-allah-yalnız-ona-dua-edənlərin-duasını-qəbul-edər">-
+              Allah duaları 🙏 qəbul edəndir! (Allah yalnız ona dua edənlərin duasını
+              qəbul edər.)</h2>
+              <h2 id="--allah-heçnəyə-ehtiyacı-olmayandır">- Allah heçnəyə ehtiyacı
+              olmayandır!</h2>
+              <h2 id="--allah-sonsuz-sürrətin-sahibidir">- Allah sonsuz sürrətin
+              sahibidir!</h2>
+              <h2
+              id="--allah-hər-zaman-var-olandır-zaman-olmayanda-allah-var-olandır">-
+              Allah hər zaman var olandır! (Zaman olmayanda Allah var olandır.)</h2>
+              <p><img src="assets/pictures/duaetmeyiorgenirem2.jpg"
+              alt="duaetmeyiorgenirem2" /></p>
+              <h2 id="--allah-istədiyi-hər-şeyi-ol-əmriylə-yoxdan-yaradandır">- Allah
+              istədiyi hər şeyi "OL" əmriylə yoxdan yaradandır!</h2>
+              <ul>
+              <li>Kainat 🌌</li>
+              <li>Zaman ⌛</li>
+              <li>Sürrət</li>
+              <li>Aləmlər</li>
+              <li>Cənnətlər</li>
+              <li>Mələklər</li>
+              <li>Cəhənnəmlər</li>
+              <li>Şeytanlar</li>
+              <li>Cinlər</li>
+              <li>Planetlər 🪐</li>
+              <li>İnsanlar 🧍</li>
+              <li>Ruhlar</li>
+              <li>Nəfslər</li>
+              <li>Heyvanlar 🐶</li>
+              <li>Bitkilər 🌹</li>
+              <li>Dağlar</li>
+              <li>Su 💧</li>
+              <li>Okeanlar</li>
+              <li>Od 🔥</li>
+              </ul>
+              <h2 id="--allah-yaratdıqları-arasında-ən-çox-i̇nsanı-sevəndir">- Allah
+              yaratdıqları arasında ən çox İnsanı sevəndir!</h2>
+              <h2 id="--allah-insanı-və-cinləri-nəfs-səbəbi-ilə-ən-çox-sevəndir">-
+              Allah insanı və cinləri nəfs səbəbi ilə ən çox sevəndir!</h2>
+              <h2
+              id="--i̇nsanları-isə-ruhundan-üfürdüyü-üçün-cinlərdəndə-çox-sevəndir">-
+              İnsanları isə ruhundan üfürdüyü üçün cinlərdəndə çox sevəndir!</h2>
+              <h2 id="--allahın-zatı-nurdandır">- Allahın Zatı Nurdandır.</h2>
+              <h2 id="--allah-zatından-bizə-ruh-üfürüb">- Allah Zatından bizə ruh
+              üfürüb.</h2>
+              <h2 id="--allahın-nəfsi-yoxdur">- Allahın nəfsi Yoxdur.</h2>
+              <h2 id="--allahın-afətləri-yoxdur">- Allahın afətləri Yoxdur.</h2>
+              <h2 id="--allahın-iradəsi-var">- Allahın iradəsi Var.</h2>
+              <h2 id="--allah-öz-iradəsindən-insanlara-və-cinlərə-cüzi-iradə-verib">-
+              Allah öz iradəsindən insanlara və cinlərə cüzi iradə verib.</h2>
+              <h2
+              id="--allahın-məkana-ehtiyacı-yoxdur-i̇nsanlara-görünmək-üçün-allah-ərşə-çəkilib">-
+              Allahın məkana ehtiyacı yoxdur. (İnsanlara görünmək üçün Allah ƏRŞƏ
+              çəkilib.)</h2>
+              <h2 id="--allah-yemir-içmir">- Allah yemir, içmir.</h2>
+              <h2 id="--allah-yeməyi-və-içməyi-insanlar-üçün-yaradıb">- Allah yeməyi
+              və içməyi insanlar üçün yaradıb.</h2>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-01-lesson_03" hidden aria-labelledby="book-01-lesson_03-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="kai̇nat">KAİNAT</h1>
+              <p><img src="assets/pictures/Orion-Nebula-Hubble-2006.svg"
+              alt="Kainat" /></p>
+              <h2 id="--kainat-allahın-ol-əmriylə-yoxdan-yaranıb">- Kainat Allahın
+              "OL" əmriylə yoxdan yaranıb.</h2>
+              <h2 id="--kainatın-7-aləmi-var">- Kainatın 7 aləmi var</h2>
+              <p><img src="assets/pictures/Alemler.png" alt="7Alem" /></p>
+              <h3 id="--1-aləm---əmr-aləmi-mələklərin-aləmi-və-cənnətlər">- 1. Aləm -
+              Əmr aləmi (Mələklərin aləmi və cənnətlər).</h3>
+              <ol type="1">
+              <li>cənnət qatı - ALİYE</li>
+              <li>cənnət qatı - FİRDEVS</li>
+              <li>cənnət qatı - HULD</li>
+              <li>cənnət qatı - QURAFAN</li>
+              <li>cənnət qatı - MEVA</li>
+              <li>cənnət qatı - NAİM</li>
+              <li>cənnət qatı - ADN</li>
+              </ol>
+              <h3 id="--2-aləm---cinlərin-fizik-aləmi">- 2. Aləm - Cinlərin fizik
+              aləmi.</h3>
+              <h3 id="--3-aləm---cinlərin-bərzaq-aləmi">- 3. Aləm - Cinlərin bərzaq
+              aləmi.</h3>
+              <h3 id="--4-aləm---i̇nsanların-fizik-aləmi">- 4. Aləm - İnsanların fizik
+              aləmi.</h3>
+              <h3 id="--5-aləm---i̇nsanların-bərzaq-aləmi">- 5. Aləm - İnsanların
+              bərzaq aləmi.</h3>
+              <h3 id="--6-aləm---zülmani-aləm---şeytanlar-aləmi-və-cəhənnəmlər">- 6.
+              Aləm - Zülmani aləm - (Şeytanlar aləmi və cəhənnəmlər)</h3>
+              <ol type="1">
+              <li>cəhənnəm qatı - QAFİL OLANLAR</li>
+              <li>cəhənnəm qatı - SAİR</li>
+              <li>cəhənnəm qatı - HUTAMƏ</li>
+              <li>cəhənnəm qatı - TELEZZA</li>
+              <li>cəhənnəm qatı - SEKAR</li>
+              <li>cəhənnəm qatı - CEHİM</li>
+              <li>cəhənnəm qatı - HAVİYE</li>
+              </ol>
+              <h3 id="--7-aləm---yoxluq-aləmi---allahın-çəkildiyi-yer-ərş">- 7. Aləm -
+              Yoxluq aləmi - (Allahın çəkildiyi yer (ƏRŞ))</h3>
+              <h2 id="--kainat-insan-formasındadır">- Kainat insan formasındadır.</h2>
+              <h2 id="--kainatın-adı---adəmdir">- Kainatın adı - ADƏMdir</h2>
+              <h2
+              id="--i̇nsanların-fizik-aləmi-milyonlarla-qalaksilərdən-ibarətdi-hər-qalaksidə-milyonlarla-ulduzlar-və-planetlər-var">-
+              İnsanların fizik aləmi milyonlarla qalaksilərdən ibarətdi. (Hər
+              qalaksidə milyonlarla ulduzlar və planetlər var).</h2>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-01-lesson_04" hidden aria-labelledby="book-01-lesson_04-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="i̇nsan">İNSAN</h1>
+              <p><img src="assets/pictures/insan.png" alt="3vucud" /></p>
+              <h2 id="--i̇nsanın-3-vücudu-var">- İnsanın 3 vücudu var.</h2>
+              <ul>
+              <li>Ruh</li>
+              <li>Fizik vücud</li>
+              <li>Nəfs</li>
+              </ul>
+              <p><img src="assets/pictures/3vucud.png" alt="3vucud" /></p>
+              <h2 id="--ruh">- Ruh</h2>
+              <ul>
+              <li>Ruh Allahın yaratdığı məxluqdur.</li>
+              <li>Ruh Allahın uzantısıdır.</li>
+              </ul>
+              <p><img src="assets/pictures/RUH.png" alt="Ruh" /></p>
+              <h2 id="--fizik-vücud">- Fizik vücud</h2>
+              <ul>
+              <li>Fizik vücud ət və sümükdən ibarətdi. (Salsalin adlı palçıqdan
+              yaradılıb).<br />
+              Fizik vücudun orqanları:</li>
+              <li>Beyin (Orqanları, yaddaşımızı və hərəkətlərimizi idarə edir)</li>
+              <li>Gözlər və Qulaqlar (Görmək və eşitmək üçün)</li>
+              <li>Ürək (Qan pompalayan)</li>
+              <li>Əllər, qollar, ayaqlar.</li>
+              </ul>
+              <p><img src="assets/pictures/FV.png" alt="FV" /></p>
+              <h2 id="--nəfs">- Nəfs</h2>
+              <p><img src="assets/pictures/NEFS.png" alt="Nefs" /></p>
+              <h3 id="--nəfs-enerji-bədəndi-qəlbində-19-afəti-var">- Nəfs enerji
+              bədəndi. Qəlbində 19 afəti var.</h3>
+              <ol type="1">
+              <li>Kin və Nifrət</li>
+              <li>Küfür (imansızlıq, iman etməmək)</li>
+              <li>Yalan</li>
+              <li>Zülüm (özümüzə və başkalarına)</li>
+              <li>Haset (Paxıllıq)</li>
+              <li>Cəhalət (Mənəvi elimsizlik)</li>
+              <li>Cimrilik (Xəsislik)</li>
+              <li>Öfkə və Gayz (Hirslənmək)</li>
+              <li>İsyan (Əmrə qarşı çıxmaq)</li>
+              <li>Səbirsizlik</li>
+              <li>Kibir və Qürur (Üstünlük və Lovğalıq)</li>
+              <li>Hırs və Şəhvət (Tamah)</li>
+              <li>Nankörluq</li>
+              <li>Dedikodu (Başkalarının dalınca danışmaq)</li>
+              <li>Zənn (Bilmədiyimizi danışmaq)</li>
+              <li>İptilalar (Pis vərdişlər)</li>
+              <li>Vəfasızlıq (Sözün üstündə durmamaq)</li>
+              <li>Mürailik (İkiüzlülük)</li>
+              <li>Fitnə və Fəsad (Ara qarışdırmaq)</li>
+              </ol>
+              <h3 id="--nəfsi-idarə-edən-afətləridir">- Nəfsi idarə edən
+              afətləridir.</h3>
+              <h3 id="--allah-bütün-insanları-nəfslərinə-qul-yaradıb">- Allah bütün
+              insanları nəfslərinə qul yaradıb.</h3>
+              <h3
+              id="--i̇nsan-nəfsinin-qulluğundan-qurtrmaq-üçün-allaha-qovuşmağı-diləməlidir">-
+              İnsan nəfsinin qulluğundan qurtrmaq üçün Allaha qovuşmağı
+              diləməlidir.</h3>
+              <h2 id="--i̇nsanın-i̇radəsi-var">- İnsanın İradəsi var</h2>
+              <h3 id="--allah-öz-iradəsindən-insana-cüzi-iradə-verib">- Allah öz
+              iradəsindən insana cüzi iradə verib.</h3>
+              <ul>
+              <li>Cüzi iradə mənəvi gücdür. (Nəfsin afətlərinə qarşı çıxan güc.
+              Allahın əmirlərini yerinə yetirmək üçün güc)</li>
+              <li>Cüzi iradə, insan Allaha qovuşmağı dilədikdən sonra işə düşür.</li>
+              <li>Cüzi iradədən istifadə etmək üçün Mürşidə tabi olamq lazımdır.</li>
+              </ul>
+              <h2 id="--i̇nsanın-aklı-var">- İnsanın Aklı var</h2>
+              <h3
+              id="--ağıl-allahın-bütün-kainatı-və-insanları-idarə-etmək-üçün-yaratdığı-məxluqdur">-
+              Ağıl Allahın bütün kainatı və insanları idarə etmək üçün yaratdığı
+              məxluqdur.</h3>
+              <ul>
+              <li>İnsanın ağlı başından biraz yuxarda yerləşir.</li>
+              <li>Ağıl insanın beynini kullanaraq vücudu idarə edir (beyinə əmr
+              edərək).</li>
+              <li>Nəfs istəklərinə görə ağıla əmr edir.</li>
+              </ul>
+              <h2 id="--i̇nsanın-zövqü-seçim-var">- İnsanın Zövqü (Seçim) var</h2>
+              <ul>
+              <li>Allah insanın zövqünə qarışmaz</li>
+              </ul>
+              <h2 id="--i̇nsan-maadi-və-mənəvi-şeylər-üçün-allaha-möhtacdı">- İnsan
+              maadi və mənəvi şeylər üçün Allaha möhtacdı.</h2>
+              <ul>
+              <li>Allah insanı möhtac (ehtiyacı olan) və aciz (çarəsiz) yaradıb</li>
+              <li>İnsan sosyal varlıqdır (Başqa insanlarada möhtacdı).</li>
+              <li>Allah hər şeyi insan üçün yaradıb. İnsanı isə özü üçün yaradıb.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-book-02-panel" hidden aria-labelledby="book-book-02-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="dua-etməyi̇-örgəni̇rəm-1">DUA ETMƏYİ ÖRGƏNİRƏM 1</h1>
+              <p><img src="assets/pictures/duaetmeyiorgenirem.jpg"
+              alt="duaetmeyiorgenirem" /></p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_01" hidden aria-labelledby="book-02-lesson_01-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="dua">DUA</h1>
+              <p><img src="assets/pictures/duaetmek.jpg" alt="duaetmek" /></p>
+              <h2 id="dua---allahdan-i̇stəməkdi̇r">DUA - ALLAHDAN İSTƏMƏKDİR</h2>
+              <ul>
+              <li>Allah, yaratdıqları içində ən çox insanı sevir.</li>
+              <li>İnsanla Allah arasında ən böyük bağ - DUADIR.</li>
+              <li>DUA — Allahdan istəməyin adıdır.</li>
+              <li>DUA — həyatımızın uğur və xoşbəxtliklə davam etməsi üçün əsas
+              vasitədir.</li>
+              <li>Allah Quranda “Allaha dua edin” buyurur.</li>
+              </ul>
+              <blockquote>
+              <p>“Əgər siz dua etməyən, bizimlə əlaqə qurmayan varlıqlar olsaydınız,
+              sizi yox edib yerinizə başqalarını gətirərdik” — deyir Allah.</p>
+              </blockquote>
+              <ul>
+              <li>Allah üçün bir qulun Ona müraciət etməsi vacibdir.</li>
+              <li>Allah hər zaman insanlardan ona dua etmələrini gözləyir.</li>
+              <li>Kim Allaha müraciət edirsə, o Allahı Rəbb yerinə qoyur
+              deməkdir.</li>
+              <li>Allah — Qullarının istəklərini yerinə yetirəndir.</li>
+              <li>Qul (insan) — Allahdan istəyəndir.</li>
+              <li>Allah bizim dualarımıza icabət (qəbul) etməyi Quranda Bəqərə surəsi
+              186 ayətdə söz verib.</li>
+              <li>Allah sizin nə istədiyinizi əlbəttə bilir.</li>
+              <li>Amma siz bu istəklərinizi Allahadan dua edərək, istəməsəniz, Allah
+              istəkərinizi yerinə yetirməz.</li>
+              <li>Mütləq istəyinizi dua etməlisiniz.</li>
+              </ul>
+              <blockquote>
+              <p>“Ya Rəbbim! Dərslərimdə uğurlu olmaq istəyirəm. Məni uğurlu et,
+              Allahım.” — deyərək, istər iç səsinizlə, istərsə də eşidilən səslə
+              deyin, amma mütləq deməlisiniz.</p>
+              </blockquote>
+              <ul>
+              <li>Allah hər zaman sizdən yanadır. (sizin tərəfinizdədir).</li>
+              </ul>
+              <p><img src="assets/pictures/dua.jpg" alt="dua" /></p>
+              <blockquote>
+              <p>PEYĞƏMBƏR ƏFƏNDİMİZ (S.A.V) BUYURUR Kİ: “DUA İBADƏTİN ÖZÜDÜR.”</p>
+              </blockquote>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_02" hidden aria-labelledby="book-02-lesson_02-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="allaha-qəlbdən-dua-etmək-səmi̇mi̇yyət-i̇man">ALLAHA QƏLBDƏN DUA
+              ETMƏK, SƏMİMİYYƏT, İMAN</h1>
+              <ul>
+              <li>Allah duaları qəbul edəndir.</li>
+              <li>Amma ürəkdən dua etməmisinizsə, ancaq söz olaraq dua etmisinizsə,
+              bunu Allah qəbul etməz.</li>
+              <li>Allah sözə baxmaz, ürəyinizə baxar.</li>
+              </ul>
+              <blockquote>
+              <p>Gözlərinizi yumun və istədiyinizi Allahla istəyin. Ən qısa zamanda bu
+              istəyinizə çatacağınızı təsəvvür edin.</p>
+              </blockquote>
+              <ul>
+              <li>Əgər ürəyinizi Allah’a açdınızsa, ürəkdən istədiniz sə, onda Allah
+              sizinlədir və sizə ən yaxınınızdan da yaxındır!</li>
+              <li>Allaha etdiyiniz bütün duaları inanaraq edin (Allahın bunu sizin
+              üçün edəcəyinə inanaraq).</li>
+              </ul>
+              <blockquote>
+              <p>Peyğəmbərimiz (s.a.v) səhabələrə tövsiyə edir: “Allahın dualarınızı
+              qəbul edəcəyinə inanaraq, bundan əmin olaraq dua edin. O zaman mütləq
+              Allah Təala dualarınızı qəbul edər.”</p>
+              </blockquote>
+              <h2 id="hekayə-vaxti">HEKAYƏ VAXTI</h2>
+              <p><img src="assets/pictures/babaeren.jpg" alt="babaeren" /></p>
+              <p>Dua mövzusunda bir hekayəmiz var: Kənd camaatı yağış duasına
+              çıxırlar. Uzun uzun dua edib Allahdan yağış istəyirlər. Ama dua
+              etmələrinə baxmayaraq bir damcı yağış belə yağmır. Saatlarla vaxt
+              itirdikdən sonra geri dönəndə, görürlər ki Baba Ərən köprünün yanındaki
+              bir bulağın başında rahat rahat oturub. Baba Ərəni görən kəndlilər
+              deyir:</p>
+              <ul>
+              <li>Ay kişi sənin hiç veycivədə deyil diyəsən?.. Baba Ərən soruşur:</li>
+              <li>Noulub ki? Görmürsən ki biz orda saatlardı Allaha dua edirik yağış
+              üçün? Senin isə dünya aləm veycivə deyil, oturmusan burda rahat rahat.
+              Heç utanmırsan bu qədər laqeyid olduğuva? Bəlkə səndə bizə qoşalasan?..
+              Baba Ərən cavab verir:</li>
+              <li>Ay qardaş, siz səhf yerə müracaat etmisiz. Mənə deməliydiz.
+              Kəndlilər təcüblə soruşurlər:</li>
+              <li>Nə? Sənə desəydik nə olacağdı ki? Baba Ərən cavab verir:</li>
+              <li>Mənə deyin və ne olacağını görün. Kəndlilər deyir:</li>
+              <li>Yaxşı. Deyirik sənə: Biz Allahın yağış yağdırmasını istiyirik. Baba
+              Ərən cavab verir:</li>
+              <li>Bu başqa məsələ. İndi baxın görün nə olacaq. Bunu deyən Baba Ərən
+              çıxardır şalvarını, bulağda yuyur asır oraya. Beş dəyqə sonra leysan
+              kimi yağəş yağır şalvarın üstünə. Kəndlilərin gözləri kəlləsinə çıxır.
+              Deyillər ki:</li>
+              <li>Ayəə sən bunu nətəər elədin aaaa? Baba Ərən gülərək cavab
+              verir:</li>
+              <li>Çox asan. Nə vaxt ki mən şalvarımı yuyub asıram, Allah mütləq yağış
+              yağdırır.</li>
+              </ul>
+              <blockquote>
+              <p>Burda bir inanc məsələsinə var. Baba Ərənin inanır ki: “Mən şalvarımı
+              yuyub assam, Allah mütləq yağış yağdıracaq.” Allah da yağdırır.</p>
+              </blockquote>
+              <ul>
+              <li>Beləliklə, Allah ürəyində inancı olanlara lazım olan yardımı mütləq
+              göstərir.</li>
+              <li>Bu hekayədəki kəndlilər də əlbəttə inanc sahibidirlər, ama onlarda
+              Allahın yağış yağdıracağına kifayət qədər inamları yoxdur diyə Allah
+              dualarını qəbul etmir.</li>
+              </ul>
+              <h2 id="sual---cavab-1">SUAL - CAVAB (1)</h2>
+              <p><img src="assets/pictures/sualcavab1.jpg" alt="sualcavab1" /></p>
+              <ul>
+              <li>İnsanla Allah arasındakı ən böyük bağ - duadır - DOĞRUDUR</li>
+              <li>Dua - Allaha müraciət etmənin və Ondan istəmənin adıdır -
+              DOĞRUDUR</li>
+              <li>Allah ürəkdə olan duaları bilir, amma buna baxmayaraq Allaha dua
+              etmək yenədə lazımdır - DOĞRUDUR</li>
+              <li>Allah insanların xoşbəxt olmasını istəmir - YALNIŞDIR</li>
+              <li>Hər şeyi yaradan Allah hər zaman Özünə müraciət etməyimizi (dua
+              etməyimizi) istəyir - DOĞRUDUR</li>
+              <li>Allah duaları qəbul edəndir - DOĞRUDUR</li>
+              <li>Allah ürəyimizə baxır və ürəkdən inanaraq edilən duaları qəbul etmir
+              - YALNIŞDIR</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_03" hidden aria-labelledby="book-02-lesson_03-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="ən-vaci̇b-dua-allaha-qovuşmaği-di̇ləmək">ƏN VACİB DUA: "ALLAHA
+              QOVUŞMAĞI DİLƏMƏK"</h1>
+              <p><img src="assets/pictures/AUD.png" alt="AUD" /></p>
+              <ul>
+              <li>"Allahım, mənimdə ruhumu sənə qovuşdur".</li>
+              <li>"Ya Rəbbim! Mən ruhumu bu dünya həyatını yaşayarkən Sənə qovuşdurmaq
+              istəyirəm. Nə olar, mənim də ruhumu Özünə qovuşdur."</li>
+              </ul>
+              <hr />
+              <p><img src="assets/pictures/smile.png" alt="smile" /></p>
+              <ul>
+              <li>"BU" dunya həyatı - indi yaşadığımız dünya həyatı deməkdir</li>
+              <li>"O" dünya həyatı - axirət həyatı deməkdir</li>
+              </ul>
+              <hr />
+              <ul>
+              <li>Eşitdik, eşitmədik deməyin! Allaha qovuşmağı diləyin!</li>
+              <li>Allaha qovuşmağı diləmək:
+              <ul>
+              <li>bir duadır,</li>
+              <li>bir istəkdir.</li>
+              <li>İslamın giriş qapısıdır.</li>
+              <li>Olmazsa-olmaz şərtidir.</li>
+              </ul></li>
+              </ul>
+              <p>Allaha necə dua etsəniz edin, Allah hamısını nəzərə alır. Amma
+              insanın Allah qatında dəyərli olması yalnız Allaha qovuşmağı diləməsi
+              ilə başlayır.</p>
+              <ul>
+              <li>Kim Allaha qovuşmağı diləyərsə, o Allah qatında dəyərlidir.</li>
+              <li>Quranda Bəqərə surəsi 186-cı ayətdə Allah bütün insanları Allaha
+              qovuşmağı diləməyə dəvət edir:</li>
+              </ul>
+              <p>“Və qullarım səndən Məni soruşduğu zaman, şübhəsiz ki, Mən (onlara)
+              yaxınam. Mənə dua ediləndə, dua edənin duasına (dəvətinə) icabət edərəm
+              (qarşılıq verərəm). O halda, onlar da Mənə (Mənim dəvətimə) icabət
+              etsinlər və Mənə amənu olsunlar (Mənə qovuşmağı diləsinlər). Umular ki,
+              beləliklə, onlar irşada çatarlar (irşad olarlar).”</p>
+              <ul>
+              <li><p>Bəqərə 186-cı ayətdə Allah birinci hissəsində dünyavi dualarımızı
+              ŞƏRTSİZ qəbul edəcəyinə söz verib.</p></li>
+              <li><p>İkinci hissəsində isə mənəvi dualarımızı ŞƏRTLİ qəbul edəcəyinə
+              söz verib.</p></li>
+              <li><p>ŞƏRT: Amenu olmaq (Allaha qovuşmağı diləməkdir)</p></li>
+              <li><p>Elə isə edəcəyimiz ən önəmli dua Allaha qovuşmağı
+              diləməkdir.</p></li>
+              <li><p>O zaman eyni nəğməni birlikdə deyək: “Hər şey çoxmu gözəldir,
+              yoxsa mənəmi elə gəlir?”</p></li>
+              </ul>
+              <h2 id="sual---cavab-2">SUAL - CAVAB (2)</h2>
+              <p><img src="assets/pictures/sualcavab2.jpg" alt="sualcavab2" /></p>
+              <p>Allah bunu əmr edir,<br />
+              O, Özünə çağırır,<br />
+              Bizdə bunu etdikdə,<br />
+              Dərhal onu qəbul edir.</p>
+              <ul>
+              <li>Cavab - "DUA"</li>
+              </ul>
+              <ol type="1">
+              <li><ul>
+              <li>Allah’a necə dua etməliyik?</li>
+              </ul></li>
+              </ol>
+              <ul>
+              <li>Cavab - "Ya Rəbbim! Mən ruhumu bu dünya həyatını yaşayarkən Sənə
+              qovuşdurmaq istəyirəm. Nə olar, mənim də ruhumu Özünə qovuşdur."</li>
+              </ul>
+              <ol start="2" type="1">
+              <li><ul>
+              <li>Ən önemli dua nedir?</li>
+              </ul></li>
+              </ol>
+              <ul>
+              <li>Cavab - Allaha qovuşmağı diləməkdir.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_04" hidden aria-labelledby="book-02-lesson_04-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="allahin-dostluğuna-qaçaq-xoşbəxt-olaq">ALLAHIN DOSTLUĞUNA QAÇAQ,
+              XOŞBƏXT OLAQ</h1>
+              <p>"Allahın dostluğuna tələsin!<br />
+              Allaha qovuşmağı diləyin,<br />
+              səyahətə başlayaq.<br />
+              Qoy Allah gəmini idarə etsin."</p>
+              <p><img src="assets/pictures/gemi.png" alt="gemi" /></p>
+              <p>Allaha qovuşmağı diləyən insan xoşbəxtlik qapısından içəri girmişdir.
+              Cənnətin ilk sevincini qazanmışdır.</p>
+              <p>Beləliklə, xoşbəxtlik qapısını açmaq üçün hərəkətə keçin:</p>
+              <ol type="1">
+              <li><ul>
+              <li>Allaha qovuşmağı diləməliyik.</li>
+              </ul></li>
+              <li><ul>
+              <li>Ruhumuzun mütləq Allaha qovuşmasına inanmalıyıq.</li>
+              </ul></li>
+              </ol>
+              <p>Bundan sonra ruh səyahətə başlayır.</p>
+              <p>Allahın dostu olmaq bizə dua qədər yaxındır.<br />
+              Ona görə də Allahın dostluğuna tələsin!<br />
+              Allaha qovuşmağa diləyin ki səyahət başlasın.<br />
+              İcazə verin Allah gəmini idarə etsin.</p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_05" hidden aria-labelledby="book-02-lesson_05-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="hi̇mmət---mürşi̇di̇n-bi̇zi̇m-üçün-duasi">HİMMƏT - MÜRŞİDİN BİZİM ÜÇÜN
+              DUASI</h1>
+              <p><img src="assets/pictures/himmet.jpg" alt="himmet" /></p>
+              <p>Hamımız dualarımızın tez qəbul olunmasını istəyirik.<br />
+              Dualarımızın qəbul olunmasını sürətləndirəcək sirr:</p>
+              <ul>
+              <li>HİMMƏTDİR (mürşidimizin bizim üçün etdiyi dua)</li>
+              </ul>
+              <p><img src="assets/pictures/duaetmek2.png" alt="duaetmek2" /></p>
+              <ul>
+              <li>HİMMƏT - Allahdan istədiyimiz yardımın Mürşid vasitəsilə Allaha
+              çatdığı və Allah tərəfindən qəbul edilməsidir.</li>
+              <li>Başqa sözlə, HİMMƏT - Allah tərəfindən qəbul edilmiş mürşidimizin
+              duasıdir.</li>
+              </ul>
+              <h2 id="mürşidin-vəzifəsi">Mürşidin vəzifəsi:</h2>
+              <ul>
+              <li>İnsanları Allaha yaxınlaşdırmaqdır.</li>
+              <li>Allahın yardımı üçün Allahı dəvət etməkdir.</li>
+              </ul>
+              <p>"Bir əlin nəyi var? İki əlin səsi var..." sözü sizə nə deyir?</p>
+              <p>Hər kəs özü üçün Allaha dua edər yalvarır. Məsələn, deyərlər ki: "Ya
+              Rəbbim! Hamını xoşbəxt etmək istəyirəm. Xahiş edirəm, mənə bu işdə kömək
+              elə, Allahım."</p>
+              <p>Həmişə Allaha müraciət edərək birbaşa Ondan kömək istəməlisiniz.
+              Hamınız bunu mütləq etməlisiniz. İrşad məqamının, yanı mürşidin himməti
+              isə buna əlavədir və daha böyük kömək vasitəsidir.</p>
+              <p>İnsan Mürşidinə bağlandıqdan sora, Allahdan aldığı yardımdan əlavə,
+              Mürşidin duasına görə daha çox yardım alacaq.</p>
+              <p>Atalar sözü var: "Bir əlin nəyi var? İki əlin səsi var..." Həm insan
+              Allaha dua edir, həm də Mürşidi onun üçün dua edir buna görə Allahın
+              yardımı iki qat artır.</p>
+              <p>Əslində, bütün yardımı edən Allahdır. Mürşidin duası ikinci bir dua
+              kimi əlavə olunur.</p>
+              <p>Quranda Allah bizə səhabəni nümunə verir. Onlar günahları üçün
+              Allahdan bağışlanma diləmişdilər və kainatın ən böyük Mürşidi olan
+              Peyğəmbər Əfəndimiz (S.Ə.V) onlar üçün dua etmişdi. Və beləcə, Allah
+              onların bütün günahlarını bağışlamışdı.</p>
+              <p>Nisa surəsinin 64-cü ayəsində Allah buyurur: “Həbibim! Nəfslərinə
+              zülm edənlər sənə gəlib qarşında diz çöküb tövbə edərək bağışlanma
+              diləsəydilər, və Sən də onlar üçün bağışlanma diləsəydin, Allahın hər
+              iki tövbəni (hər iki duanı) qəbul etdiyini görərdin”.</p>
+              <ul>
+              <li>Bu, günahların savaba çevrilməsidir.</li>
+              </ul>
+              <p>Kimin vasitəsilə baş verir?</p>
+              <ul>
+              <li><ol type="1">
+              <li>İnsanın öz duasına görə.</li>
+              </ol></li>
+              <li><ol start="2" type="1">
+              <li>Və üstə gəl Mürşidin duasına görə baş verir. Buna “himmət” (mənəvi
+              yardım) deyilir.</li>
+              </ol></li>
+              </ul>
+              <p>İnsanın Mürşidi olarsa bu daha böyük nəticəyə gətirib çıxarır.</p>
+              <p>Bu, Peyğəmbər Əfəndimiz (S.Ə.V) və Allahın bütün övliyaları üçün belə
+              olub.</p>
+              <p>Allahın övliyası və Mürşidi olan Mövlana Cəlaləddin Rumi deyir: “Bu
+              dərgah ümidsizlər dərgahı deyil. Tövbənizi min dəfə pozsanız belə, yenə
+              gəlin. Mecusi də olsan, bütpərəst də olsan, atəşpərəst da olsan gəl. Kim
+              olursan ol, gəl. Çünki bu dərgah ümidsizlər dərgahı deyil.”</p>
+              <p>Mövlana bununla nə demək istəyir görəsən?</p>
+              <ul>
+              <li>Mevlana Allahın bir evliyasıdı və Mürşiddi. Bu Mürşid dua etdiyi
+              zaman, Allahın yardımı gələcək. Allah o insanın bütün günahlarını savaba
+              çevirəcək.</li>
+              </ul>
+              <p>Mürşidə bağlandığınız zaman, bütün günahlarınız savabla əvəz
+              ediləcək. Burdan Mürşidin duasının nə qədər önəmli olduğunu başa
+              düşürük.</p>
+              <p>Sizcə tək insanın Allaha dua etməsi daha keçərlidir, yoxsa həm
+              insanın həmdə onun Mürşidinin himməti, duası daha keçərlidi?</p>
+              <p>Şəxsi dua da Allaha çatır; Mürşidin duası da Allaha çatır. Və o iki
+              dua Allahın qatında birləşir. Buna görə də, Mürşidin himməti, insanın
+              qayreti və Allahın nüsrəti (yardımı) bir araya gəlir.</p>
+              <ul>
+              <li>Bütün gözəlliklər bu üçbucağın içindədir:</li>
+              </ul>
+              <p><img src="assets/pictures/mutluluk-ucgen.png"
+              alt="mutluluk-ucgen" /></p>
+              <h2 id="xoşbəxtli̇k-üçbucağidi">XOŞBƏXTLİK ÜÇBUCAĞIDI</h2>
+              <ol type="1">
+              <li>İNSANIN QAYRETİ (ŞƏXSİ DUA)</li>
+              <li>MÜRŞİDİN HİMMƏTİ (DUA)</li>
+              <li>ALLAHIN NÜSRƏTİ (YARDIMI)</li>
+              </ol>
+              <h2 id="bunu-bi̇li̇n">BUNU BİLİN:</h2>
+              <p><img src="assets/pictures/bunu-bil.png" alt="bunu-bil" /></p>
+              <p>Unutmayın!<br />
+              Mürşid Allaha qovuşmağı diləyənlərin Allaha qovuşmaları üçün dua
+              edər!</p>
+              <h2 id="sual---cavab-3">SUAL - CAVAB (3)</h2>
+              <p><img src="assets/pictures/sualcavab3.jpg" alt="sualcavab3" /></p>
+              <ul>
+              <li>Ən önemli dua Allah’a ulaşmayı dileme duasıdır.</li>
+              <li>Kim Allah’a qovuşmağı diləyərsə ərmiş evliya olur.</li>
+              <li>Mürşidin vəzifəsi: insanları Allaha yaxınlaşdırmaqdır.</li>
+              <li>HİMMƏT - Allahdan istədiyimiz yardımın mürşid vasitəsilə Allaha
+              çatdığı və Allah tərəfindən qəbul edilməsidir.</li>
+              <li>Allah’a qovuşmağı diləyən kişi, ruhunu Allah Özünə qovuşduracağına
+              inanan insandır.</li>
+              </ul>
+              <h2 id="hekayə-vaxti">HEKAYƏ VAXTI</h2>
+              <p><img src="assets/pictures/yunus.jpg" alt="yunus" /></p>
+              <p>Yunus, Mürşidi Taptuk Emrenin dərgahından ayrıldıqdan sonra yolda iki
+              dərvişə rast gəlir. Üçü birlikdə yola davam etməyi qərar verirlər.<br />
+              Axşam bir mağaraya sığındıqları zaman dərvişlərdən biri Allaha hər
+              zamankı duasını edir:<br />
+              — Ya Rəbbim, bizə yemək göndər, nolar?<br />
+              Allah dərvişin duasını qəbul edir və bir süfrə yemək göndərir.
+              Dərvişlərin hamısı bu süfrədən yeyib doyurlar.<br />
+              Sabahsı gün ikinci dərviş də dua edir. Allah onun da duasını qəbul edir
+              və ona da bir süfrə yemək göndərir. Yenə üçüdə bu süfrədən yeyib
+              qarınlarını doydururlar.<br />
+              Üçüncü gecə sıra gəlir Yunusa. Yunus həyatında belə bir şey etməmişdi.
+              O, əllərini açıb Rəbbinə dua edir:<br />
+              — Ya Rəbbim! Bu mübarək dərvişlər Sənə necə dua etdilərsə, mən də elə
+              dua edirəm. Bizə yemək göndər, nolar?<br />
+              Allah bu dəfə üç süfrə göndərir. Üç süfrəni görən dərvişlər çox
+              təəccüblənir və soruşurlar:<br />
+              — Sən necə dua etdin ki, üç süfrə gəldi?<br />
+              Yunus deyir:<br />
+              — Mən sizin etdiyiniz duadan etdim. Əslində siz deyin görüm necə dua
+              etdiniz ki, Allah o süfrələri göndərdi?<br />
+              Onlar cavab verir ki:<br />
+              — Bir Yunus var, dərviş Yunus. O, Allah qatında nə qədər dəyərli
+              olduğunu bilmir. Biz onun himmətini istəyərək Allaha dua edirik.</p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-02-lesson_06" hidden aria-labelledby="book-02-lesson_06-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="yemək-duasi-edi̇rəm-yemek-duasi-yapiyorum">YEMƏK DUASI EDİRƏM
+              (YEMEK DUASI YAPIYORUM)</h1>
+              <p><img src="assets/pictures/yemekduasi.jpg" alt="yemekduasi" /></p>
+              <h2 id="yeməyə-başlama-duası-yemek-başlangıç-duası">Yeməyə Başlama Duası
+              (Yemek Başlangıç Duası)</h2>
+              <ul>
+              <li>El Fâtiha maas salâvât.</li>
+              <li>Ey Uca Allahım, bizlərə ənam buyurduğun bu tayyib nemətlərlə bizi bu
+              gün də ruziləndirdiyin üçün və bu gün də qarnımızı bu tayyib nemətlərlə
+              doydurmağı nəsib etdiyin üçün Sənə sonsuz həmd və şükür olsun.</li>
+              <li>Niyyət edirik Sənin rizan üçün ehsan buyurduğun bu tayyib nemətlərlə
+              bugünkü ruzimizi almağa.</li>
+              <li>Eûzubillâhimineşşeytanirracîm, bismillâhirrahmânirrâhim.</li>
+              </ul>
+              <p>(El Fâtiha maas salâvât. Ey Yüce Allah’ım, bizlere en’âm buyurduğun
+              bu tayyip ni’metlerle bizleri bugün de rızıklandırdığın için ve bugün de
+              karnımızı bu tayyip ni’metlerle doyurmayı nasip kıldığın için Sana
+              sonsuz hamd ve şükrolsun. Niyet ettik Senin rızan için ihsan buyurduğun
+              bu tayyip ni’metlerle bugünkü rızkımızı almaya.
+              Eûzubillâhimineşşeytanirracîm, bismillâhirrahmânirrâhim.)</p>
+              <h2 id="yeməyi-bitirmə-duası-yemek-kapanış-duası">Yeməyi Bitirmə Duası
+              (Yemek Kapanış Duası)</h2>
+              <ul>
+              <li>Eûzubillâhimineşşeytanirracîm, bismillâhirrahmânirrâhim.</li>
+              <li>Ey Uca Allahım, bizlərə ənam buyurduğun bu tayyib nemətlərlə bu gün
+              də qarnımızı doydurduğun üçün Sənə sonsuz həmd və şükür olsun.</li>
+              <li>Fərəh süfrələri olsun.</li>
+              <li>Bərəkət süfrələri olsun.</li>
+              <li>Allahın süfrələri olsun.</li>
+              <li>Allah hamımızdan razı olsun</li>
+              <li>El Fâtiha maas salâvât.</li>
+              <li>Nuş olsun.</li>
+              </ul>
+              <p>(Eûzubillâhiminneşşeytânirracîm, bismillâhirrâhmanirrahîm. Ey Yüce
+              Allah’ım! Bizlere en’âm buyurduğun bu tayyip ni’metlerle bugün de
+              karnımızı doyurmayı nasip kıldığın için ve bugün de bizleri
+              rızıklandırdığın için Sana sonsuz hamd ve şükrolsun. Ferah sofraları
+              olsun, bereket sofraları olsun. Allah’ın sofraları olsun. Allah
+              hepinizden razı olsun. El Fâtiha meas sâlâvat. Afiyet olsun.)</p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-book-03-panel" hidden aria-labelledby="book-book-03-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="dua-etməyi̇-örgəni̇rəm-2">DUA ETMƏYİ ÖRGƏNİRƏM 2</h1>
+              <p><img src="assets/pictures/duaetmeyiorgenirem-2.jpg"
+              alt="duaetmeyiorgenirem-2" /></p>
+            </div>
+          </div>
+        </article>
+        <article class="content-panel lesson" id="book-03-lesson_01" hidden aria-labelledby="book-03-lesson_01-title">
+          <div class="lesson-card">
+            <div class="lesson-content">
+              <h1 id="duasi-qəbul-edi̇lənlər-və-duasi-qəbul-edi̇lməyənlər">DUASI QƏBUL
+              EDİLƏNLƏR VƏ DUASI QƏBUL EDİLMƏYƏNLƏR</h1>
+              <p>Əziz şagirdlər, yalnız iki cür insan var: duası qəbul edilənlər və
+              duası qəbul edilməyənlər.</p>
+              <p><img src="assets/pictures/duasiqebuledilenler.jpg"
+              alt="duasiqebuledilenler" /></p>
+              <p>Bəs necə dua etmək lazımdır ki, Allah dualarımızı qəbul etsin?</p>
+              <ul>
+              <li>Layiq olduğumuz mövzularda dua etsək, Allah duamızı qəbul edər.</li>
+              <li>Layiq olmadığımız halda isə, Allah bizə əvvəla laiq olmaqımız üçün
+              yardım göndərər. Sonra isə yardımı ilə bizi o səviyyəyə çatdırdıqdan
+              sonra duamızı qəbul edər.</li>
+              </ul>
+              <p>Məsələn, siz orta məktəb şagirdisiniz və dərhal həkim olmaq üçün
+              Allaha dua edirsiniz.<br />
+              Əvvəla siz dərs oxuyarsınız, uğur qazanmaq üçün çalışarsınız, və bunlar
+              üçün Allah sizə köməyini göndərər.<br />
+              Siz Allahın yardımı ilə sinifləri bir-bir uğurla keçərsiniz və beləliklə
+              laiq olarsınız.<br />
+              Sonda isə, vaxtı gəldikdə Allahın yardımı ilə həkim olarsınız.</p>
+              <p>Allah Bəqərə surəsinin 186-cı ayəsində belə buyurur:<br />
+              “Bizə dua edildiyi zaman dua edənin duasını qəbul edərik. Ancaq o da
+              Bizim dəvətimizi qəbul edərsə və Allaha qovuşmağı diləyərsə.”</p>
+              <p>Dünyaya aid dualarda isə insan Allaha qovuşmağı diləsə də, diləməsə
+              də, Allah onun duasını mütləq qəbul edər.<br />
+              Amma mənəvi sahədə olan duaların Allah tərəfindən qəbul edilməsi insanın
+              Allaha qovuşmağı diləməsindən asılıdır.</p>
+              <p>Əgər insan Allaha qovuşmağı diləməzsə, onun Mənəvi duaları (Allahın
+              cənnətinə getməsi, dünya səadətinə çatması, günahlarının bağışlanması və
+              savaba çevrilməsi) qəbul edilməz.</p>
+              <p>İnsanın mənəvi dualarının qəbul olunması üçün mütləq Allaha qovuşmağı
+              diləməsi lazımdır.</p>
+              <p>TAPŞIRIQ</p>
+              <p><img src="assets/pictures/tapsiriq-1.png" alt="tapsiriq-1" /></p>
+              <p>Gerçəkləşməsini istədiyiniz arzuları Allaha necə dua edərdiz?</p>
+              <p>Misal: Allahım mənə ... ver. Və məni buna laiq qıl.</p>
+              <p>....</p>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const storageKey = "school-lessons-theme";
+      const authKey = "school-lessons-auth";
+      const passwordValue = "okul";
+      const body = document.body;
+      const passwordInput = document.getElementById("passwordInput");
+      const authSubmit = document.getElementById("authSubmit");
+      const authMessage = document.getElementById("authMessage");
+      const logoutButton = document.getElementById("logoutButton");
+      const themeButtons = Array.from(document.querySelectorAll(".theme-toggle"));
+      const menuToggle = document.getElementById("menuToggle");
+      const navigation = document.getElementById("lessonNavigation");
+      const mobileBackdrop = document.getElementById("mobileBackdrop");
+      const panelButtons = Array.from(document.querySelectorAll(".panel-button"));
+      const bookButtons = Array.from(document.querySelectorAll(".book-toggle"));
+      const panels = Array.from(document.querySelectorAll(".content-panel"));
+
+      function safeStorageGet(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function safeStorageSet(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch (error) {
+          return;
+        }
+      }
+
+      function applyTheme(theme) {
+        const nextTheme = theme === "light-theme" ? "light-theme" : "dark-theme";
+        body.classList.remove("dark-theme", "light-theme");
+        body.classList.add(nextTheme);
+        themeButtons.forEach(function (button) {
+          button.setAttribute(
+            "aria-label",
+            nextTheme === "dark-theme"
+              ? "Açıq temaya keç"
+              : "Tünd temaya keç"
+          );
+        });
+        safeStorageSet(storageKey, nextTheme);
+      }
+
+      function setMenuState(isOpen) {
+        if (!menuToggle || !navigation || !mobileBackdrop) {
+          return;
+        }
+        navigation.classList.toggle("is-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileBackdrop.hidden = !isOpen;
+      }
+
+      function setAuthorized(isAuthorized) {
+        body.classList.toggle("is-authorized", isAuthorized);
+      }
+
+      function closeAllBooks() {
+        bookButtons.forEach(function (button) {
+          const group = button.closest(".book-group");
+          button.setAttribute("aria-expanded", "false");
+          button.classList.remove("is-open");
+          if (group) {
+            group.classList.remove("is-open");
+          }
+        });
+      }
+
+      function setBookOpen(bookId, shouldOpen) {
+        closeAllBooks();
+        if (!shouldOpen) {
+          return;
+        }
+        bookButtons.forEach(function (button) {
+          if (button.dataset.bookTarget !== bookId) {
+            return;
+          }
+          const group = button.closest(".book-group");
+          button.setAttribute("aria-expanded", "true");
+          button.classList.add("is-open");
+          if (group) {
+            group.classList.add("is-open");
+          }
+        });
+      }
+
+      function showPanel(panelId) {
+        panels.forEach(function (panel) {
+          const isActive = panel.id === panelId;
+          panel.hidden = !isActive;
+          panel.classList.toggle("is-visible", isActive);
+        });
+
+        panelButtons.forEach(function (button) {
+          const isActive = button.dataset.panelTarget === panelId;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-selected", String(isActive));
+        });
+
+        window.scrollTo({ top: 0, behavior: "auto" });
+        setMenuState(false);
+      }
+
+      function tryLogin() {
+        if (!passwordInput) {
+          return;
+        }
+        if (passwordInput.value.trim() === passwordValue) {
+          safeStorageSet(authKey, "ok");
+          if (authMessage) {
+            authMessage.textContent = "";
+          }
+          passwordInput.value = "";
+          setAuthorized(true);
+          showPanel("homePanel");
+        } else if (authMessage) {
+          authMessage.textContent = "Parol yanlışdır. Yenidən cəhd edin.";
+        }
+      }
+
+      applyTheme(safeStorageGet(storageKey) || "dark-theme");
+
+      themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const nextTheme = body.classList.contains("dark-theme") ? "light-theme" : "dark-theme";
+          applyTheme(nextTheme);
+        });
+      });
+
+      panelButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          showPanel(button.dataset.panelTarget);
+        });
+      });
+
+      bookButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const shouldOpen = button.getAttribute("aria-expanded") !== "true";
+          setBookOpen(button.dataset.bookTarget, shouldOpen);
+          showPanel(button.dataset.panelTarget);
+        });
+      });
+
+      if (menuToggle) {
+        menuToggle.addEventListener("click", function () {
+          setMenuState(!navigation.classList.contains("is-open"));
+        });
+      }
+
+      if (mobileBackdrop) {
+        mobileBackdrop.addEventListener("click", function () {
+          setMenuState(false);
+        });
+      }
+
+      if (authSubmit) {
+        authSubmit.addEventListener("click", tryLogin);
+      }
+
+      if (passwordInput) {
+        passwordInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            tryLogin();
+          }
+        });
+      }
+
+      if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+          safeStorageSet(authKey, "");
+          setMenuState(false);
+          showPanel("homePanel");
+          setAuthorized(false);
+          if (passwordInput) {
+            passwordInput.focus();
+          }
+        });
+      }
+
+      setAuthorized(safeStorageGet(authKey) === "ok");
+      showPanel("homePanel");
+      if (!body.classList.contains("is-authorized") && passwordInput) {
+        passwordInput.focus();
+      }
+    }());
+  </script>
+</body>
+</html>
