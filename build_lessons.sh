@@ -18,7 +18,7 @@ write_full_index() {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TƏSƏVVÜF MƏKTƏBİ</title>
-  <meta name="description" content="Markdown fayllarından yaradılan adaptiv dərs saytı.">
+  <meta name="description" content="ONLİNE TƏSƏVVÜF İBTİDAİ MƏKTƏB.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -92,14 +92,14 @@ HTML
         <section class="content-panel home-panel is-visible" id="homePanel" aria-labelledby="homePanelTitle">
           <div class="home-hero">
             <p class="eyebrow">Buradan başlayın</p>
-            <h2 id="homePanelTitle">Kitablar və dərslər bir yerdə toplanıb.</h2>
+            <h2 id="homePanelTitle">ONLİNE TƏSƏVVÜF İBTİDAİ MƏKTƏB.</h2>
             <p class="home-hero__lead">Menyudan kitab adını seçin.</p>
           </div>
 
           <div class="home-grid">
             <article class="home-card">
-              <h3>Əvvəl kitablar</h3>
-              <p>Menyu dərsləri kitab başlıqları altında toplanır.</p>
+              <h3>6–14 yaş arası oğlan uşaqları üçün.</h3>
+              <p>Dərslər həftənin bazar günü səhər saat 10:00 da başlayır.</p>
             </article>
             <article class="home-card">
               <h3>Qovluq quruluşu</h3>
