@@ -24,7 +24,7 @@ Amma mənəvi sahədə olan duaların Allah tərəfindən qəbul edilməsi insan
 
 İnsanın mənəvi dualarının qəbul olunması üçün mütləq Allaha qovuşmağı diləməsi lazımdır.  
 
-TAPŞIRIQ
+## TAPŞIRIQ 
 
 ![tapsiriq-1](/assets/pictures/tapsiriq-1.png)
 
