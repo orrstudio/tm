@@ -31,7 +31,7 @@ Hər zaman Ona dua edin.
 
 ## HEKAYƏ
 
-![hekaye](/assets/pictures/sharlar.jpg)  
+![hekaye](/assets/pictures/hekaye.jpg)  
 
 Hz. Musa bir gün körpüdən keçərkən, körpüdə oturan bir dilənçinin Allaha dua etdiyini eşidir:  
 
