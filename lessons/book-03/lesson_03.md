@@ -5,11 +5,11 @@
 - Allaha dost olmaq üçün hansı addımı atmışıq?  
   - Allaha qovuşmağı diləmişik.  
 - Ürəyimizdən keçənləri ən yaxşı bilən kimdi?  
-  - Allah. Bizim ən böyük dostumuz!  
+  - Allah bizim ən böyük dostumuzdur!  
 - Dost, dostuna hər şeyini danışar mı?   
   - Əlbətdə danışar.  
   
-Dostumuz Allahla danışmalıyıq! Çünki dostumuz olan Allah bizi çox sevir və istəyir ki, ürəyimizi Ona boşaldaq, sıxıntıdan qurtaraq və rahatlaşaq.  
+Dostumuz Allahla danışmalıyıq! Çünki dostumuz olan Allah bizi çox sevir və istəyir ki, ürəyimizi Ona açaq (boşaldaq), sıxıntıdan qurtaraq və rahatlaşaq.  
 
 Allah bizim sığınacağımızdır!  
 
@@ -18,8 +18,8 @@ Allah bizim sığınacağımızdır!
 
 Allaha müraciət edin!  
 
-Göz yaşı tökməkdən çəkinməyin, utanmayın.  
-Ürəyinizdə olanları rahat-rahat deyin, danışın.  
+Allaha göz yaşı tökməkdən çəkinməyin, utanmayın.  
+Ürəyinizdə olanları Allaha rahat-rahat deyin, danışın.  
 Dərdlərinizi Allahla paylaşın.  
 Allah sizin bütün dərdlərinizi götürməyə, problemlərinizi yüngülləşdirməyə hazırdır.  
 Hər şeyi mütləq Ona danışın.  
@@ -46,12 +46,12 @@ Bir neçə addım getdikdən sonra Hz. Musanın ürəyi sıxılır və geri qay�
 Musa hələ üç addım getməmiş Allah ona buyurur:  
 
 — Geri qayıt, ey Musa!  
-- O adamada de ki: “Allaha necə dua edirdinsə, elə et. Əvvəl nəcə edirdinsə, yenə də onu de. Əgər başqa cür dua etmək istəyirsənsə, o cür də et. Mənim sənə dediklərimi isə unut.”  
+— O adamada de ki: “Allaha necə dua edirdinsə, elə et. Əvvəl nəcə edirdinsə, yenə də onu de. Əgər başqa cür dua etmək istəyirsənsə, o cür də et. Mənim sənə dediklərimi isə unut.”  
 
 Allah bizim ürəyimizdən keçənləri onsuz da bilir. Amma istəyir ki, biz onları Ona deyək, ürəyimizi Ona açıb Allahı öz sirdaşımız edək.  
 
-- İstədiyiniz sözlərlə dua edin!  
-- Dərdinizi danışın.  
+— İstədiyiniz sözlərlə dua edin!  
+— Dərdinizi Ona danışın.  
 
 Allah bundan inciməz.  
 Allah sizi çox sevir və ürəyinizdə olanlara baxır.  

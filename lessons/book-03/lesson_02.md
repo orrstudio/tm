@@ -1,6 +1,6 @@
 # HƏR VƏZİYYƏTDƏ DUA EDƏ BİLMƏK (BOLLUQDA DA, ÇƏTİNLİKDƏ DƏ DUA ETMƏK).
 
-Uşaqlar, sizcə insanlar nə zaman Allaha dua edirlər?
+Uşaqlar, sizcə insanlar nə zaman Allaha dua edirlər?  
 
 ![bolluktadua](/assets/pictures/bolluktadua.jpg)  
 
