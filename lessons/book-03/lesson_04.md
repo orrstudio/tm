@@ -10,7 +10,7 @@ Hər mövzuda bizə ən gözəl nümunə olan Peyğəmbərimiz (s.a.v.) ömrü b
 
 - «Ya Rəbbim onları bağışla, çünki onlar nə etdiklərini bilmirlər».  
 
-![beddua1](/assets/pictures/beddua2.jpg)  
+![beddua2](/assets/pictures/beddua2.jpg)  
 
 ## Allahım, dostum mənə pislik etdi, amma mən onu yenə də sevirəm və bağışlayıram. Allahım, qəlbimə dostuma qarşı sevgi qoy.  
 
