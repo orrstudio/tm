@@ -4,16 +4,27 @@
 ![baskalariucundua](/assets/pictures/baskalariucundua.png)  
 
 
-Allahın sizi daha çox xoşbəxt etməsini istəyirsinizmi? Onda başqa insanlar üçün Allaha dua edin. Başqaları üçün dua edən insan Allahın qatında daha üstündür. Çünki başqaları üçün dua edən insan özündən çox başqalarına dəyər verən insandı.  
+Allahın sizi daha çox xoşbəxt etməsini istəyirsinizmi? Onda başqa insanlar üçün Allaha dua edin.  
+
+
+> Başqaları üçün dua edən insan Allahın qatında daha üstündür.  
+
+
+## Çünki başqaları üçün dua edən insan özündən çox başqalarına dəyər verən insandır.  
 
 
 ![baskalariucundua2](/assets/pictures/baskalariucundua2.png)  
 
 
-Allah bizim bir-birimizi sevməyimizi, dost olmağımızı və hər zaman bir-birimizə kömək etməyimizi istəyir. İnsanlar bəzən bizə qarşı pis rəftar edə bilər, yanlış davrana bilərlər. Onlara qarşı kin saxlamadan, bu yanlış hərəkətlərdən qurtarmaları üçün Allaha dua etməyimizi istəyir.  
+Allah bizim bir-birimizi sevməyimizi, dost olmağımızı və kömək etməyimizi istəyir.  
+İnsanlar bizə pis rəftar edə bilər.  
+
+- Onlara qarşı kin saxlamamalıyıq. 
+- Onlar üçün dua etməliyik. (Allahım ona bu yanlışından qurtarmasına yardım et.)  
 
 
 ## Dualarımız daima xeyrə və yaxşılığa doğru olmalıdır.  
+
 
 ### TAPŞIRIQ
 
