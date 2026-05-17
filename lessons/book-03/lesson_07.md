@@ -19,7 +19,8 @@ Allahın sizi daha çox xoşbəxt etməsini istəyirsinizmi? Onda başqa insanla
 Allah bizim bir-birimizi sevməyimizi, dost olmağımızı və kömək etməyimizi istəyir.  
 İnsanlar bizə pis rəftar edə bilər.  
 
-- Onlara qarşı kin saxlamamalıyıq. 
+
+- Onlara qarşı kin saxlamamalıyıq.  
 - Onlar üçün dua etməliyik. (Allahım ona bu yanlışından qurtarmasına yardım et.)  
 
 
@@ -35,8 +36,8 @@ Allah bizim bir-birimizi sevməyimizi, dost olmağımızı və kömək etməyimi
 
 ![baskalariucunduatapsiriq1](/assets/pictures/baskalariucunduatapsiriq1.png)  
 
-2. Dairəvi xanaların içindəki hərfləri nömrələrinə görə aşağıdakı dördkünc xanalara (şifrəyə) yazın.
+2. Dairəvi xanaların içindəki hərfləri nömrələrinə görə aşağıdakı dördkünc xanalara (şifrəyə) yazın.  
 
 ![baskalariucunduatapsiriq2](/assets/pictures/baskalariucunduatapsiriq2.png)  
 
-3. Şifrəni tapın.
+3. Şifrəni tapın.  
