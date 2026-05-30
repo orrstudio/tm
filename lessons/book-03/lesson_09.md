@@ -8,8 +8,8 @@ Allah hər şeyə Fatihə surəsi ilə başlayır. Bu surə Allaha bir yalvarı�
 
 - 1/FATİHƏ-1 Bismillâhir rahmânir rahîm.  
 - Rəhman və Rəhim olan Allahın adı ilə.  
-> Rəhman əsması mənəvi dualar üçündür.
-> Rəhim əsması dünyavi dualar üçündür.
+> Rəhman əsması dünyavi dualar üçündür.
+> Rəhim əsması mənəvi dualar üçündür.
 - 1/FATİHƏ-2 El hamdu lillâhi rabbil âlemîn.  
 - Həmd aləmlərin Rəbbi olan Allahadır.  
 - 1/FATİHƏ-3 Er rahmânir rahîm.  
