@@ -16,6 +16,7 @@ Allah hər şeyə Fatihə surəsi ilə başlayır. Bu surə Allaha bir yalvarı�
 - Rəhmandır, Rəhimdir.  
 - 1/FATİHƏ-4 Mâliki yevmid dîn.  
 - Din gününün sahibidir.  
+> Allaha qovuşmağı dilədiyimiz gün din günüdür.
 - 1/FATİHƏ-5 İyyâke na’budu ve iyyâke nestaîn.  
 - Allahım! Yalnız sənə qul olarıq və yalnız Səndən İSTİANƏ (mürşidimizi) istəyərik.  
 - 1/FATİHƏ-6 İhdinâs sırâtel mustakîm.  
